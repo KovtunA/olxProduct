@@ -19,6 +19,14 @@ namespace SetupPlayground
         [FindsBy(How = How.CssSelector, Using = "#bigImage > div.lshownext.abs.cpointer.bigImageNext > a > span")]
         public IWebElement showAnotherPhotos;
 
+        [FindsBy(How = How.CssSelector, Using = "#contact_methods > li:nth-child(1) > a > span")]
+        public IWebElement sendEmailButton;
+
+        [FindsBy(How = How.CssSelector, Using = "#contact_methods > li:nth-child(2) > div")]
+        public IWebElement showPhon;
+
+        [FindsBy(How = How.CssSelector, Using = "#offeractions > div.offer-sidebar__box > div.offer-user__details > a")]
+        public IWebElement showAds;
 
         public homePage(IWebDriver browser)
         {
@@ -40,5 +48,19 @@ namespace SetupPlayground
             showAnotherPhotos.Click();
         }
 
+        public void sendEmail()
+        {
+            sendEmailButton.Click();
+        }
+
+        public void showPhone()
+        {
+            showPhon.Click();
+        }
+
+        public void showAdvertisment()
+        {
+            showAds.Click();
+        }
     }
 }
