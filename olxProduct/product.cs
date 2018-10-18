@@ -1,5 +1,6 @@
 ﻿using System;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace SetupPlayground
@@ -28,6 +29,9 @@ namespace SetupPlayground
         [FindsBy(How = How.CssSelector, Using = "#offeractions > div.offer-sidebar__box > div.offer-user__details > a")]
         public IWebElement showAds;
 
+        [FindsBy(How = How.CssSelector, Using = "#offerdescription > div:nth-child(1) > div > a")]
+        public IWebElement addToBasketButton;
+
         public homePage(IWebDriver browser)
         {
             this.browser = browser;
@@ -38,9 +42,7 @@ namespace SetupPlayground
         { browser.Navigate().GoToUrl(productUrl); }
 
         public void openMainPage()
-        {
-            showMainPage.Click();
-        }
+        { showMainPage.Click(); }
 
         public void lookThroughPhotos()
         {
@@ -49,18 +51,22 @@ namespace SetupPlayground
         }
 
         public void sendEmail()
-        {
-            sendEmailButton.Click();
-        }
+        { sendEmailButton.Click(); }
 
         public void showPhone()
-        {
-            showPhon.Click();
-        }
+        { showPhon.Click(); }
 
         public void showAdvertisment()
-        {
-            showAds.Click();
-        }
+        { showAds.Click(); }
+
+        public void AddToTheBasket()
+        { addToBasketButton.Click(); }
+
+        //        browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
+        //var element = browser.FindElement(By.CssSelector("#offerdescription > div:nth-child(1) > div > a"));
+        //Actions actions = new Actions(browser);
+        //actions.MoveToElement(element);
+        //actions.Perform();
+
     }
 }

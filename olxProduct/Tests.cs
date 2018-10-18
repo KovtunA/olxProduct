@@ -24,69 +24,34 @@ namespace SetupPlayground
         public void prepare()
         {
             pageWithProduct = new homePage(browser);
-            pageWithProduct.open();
+            pageWithProduct.open(); 
         }
 
         [Test]
         public void GoToHomePage()
-        {
-            pageWithProduct.openMainPage();
-        }
+        { pageWithProduct.openMainPage(); }
 
         [Test]
         public void LookAtThePhotos()
-        {
-            pageWithProduct.lookThroughPhotos();
-        }
+        { pageWithProduct.lookThroughPhotos(); }
 
         [Test]
         public void writeEmail()
-        {
-            pageWithProduct.sendEmail();
-        }
+        { pageWithProduct.sendEmail(); }
 
         [Test]
         public void showPhoneNumber()
-        {
-            pageWithProduct.showPhone();
-        }
+        { pageWithProduct.showPhone(); }
 
         [Test]
         public void showAnotherAds()
+        { pageWithProduct.showAdvertisment(); }
+
+        [Test]
+        public void AddProductTheBusket()
         {
-            pageWithProduct.showAdvertisment();
+            pageWithProduct.AddToTheBasket();
         }
-
-
-        //}
-
-        //[Test]
-        //public void addToBasket()
-        //{
-        //    IWebDriver browser = new ChromeDriver();
-        //    browser.Navigate().GoToUrl(GoodsUrl);
-        //    browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-        //    var element = browser.FindElement(By.CssSelector("#offerdescription > div:nth-child(1) > div > a"));
-        //    Actions actions = new Actions(browser);
-        //    actions.MoveToElement(element);
-        //    actions.Perform();
-        //    IWebElement star = browser.FindElement(By.CssSelector("#offerdescription > div:nth-child(1) > div > a"));
-        //    star.Click();
-        //    browser.Close();
-        //}
-
-        //[Test]
-        //public void logo()
-        //{
-        //    IWebDriver browser = new OpenQA.Selenium.Chrome.ChromeDriver();
-        //    browser.Navigate().GoToUrl(GoodsUrl);
-        //    browser.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
-        //    IWebElement cont = browser.FindElement(By.Id("headerLogo"));
-        //    cont.Click();
-        //    browser.Close();
-        //}
-
-
 
         [OneTimeTearDown]
         public void closeBrowser()
